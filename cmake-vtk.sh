@@ -1,3 +1,7 @@
+rm -rf /work/vtk/build
+
+mkdir /work/vtk/build
+
 cmake \
     -G Ninja \
     -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE} \
@@ -11,10 +15,6 @@ cmake \
     -DVTK_NO_PLATFORM_SOCKETS:BOOL=ON \
     -DVTK_MODULE_ENABLE_VTK_hdf5:STRING=NO \
     -DVTK_GROUP_ENABLE_Rendering:STRING=NO \
-    -DVTK_GROUP_ENABLE_Views:STRING=NO \
-    -DVTK_GROUP_ENABLE_Qt:STRING=NO \
-    -DVTK_GROUP_ENABLE_Web:STRING=NO \
-    -DVTK_GROUP_ENABLE_MPI:STRING=NO \
     -DVTK_SMP_ENABLE_STDTHREAD:BOOL=OFF \
     -B /work/vtk/build \
     /work/vtk/src
